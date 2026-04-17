@@ -1,45 +1,17 @@
-class ViewElement{
-    /**
-     * @type {string}
-     */
-    #id
-    /**
-     * @type {HTMLDivElement}
-     */
-    #div
-    /**
-     * 
-     * @param {string} id 
-     */
-    constructor(id){
-        this.#id = id
-    }
+import { ClassB } from "./classB.js";
+import {NavigationBar} from "./navbar.js";
+import { ClassA } from "./classA.js";
 
-    /**
-     * 
-     * @param {HTMLDivElement} parent 
-     */
-    appendto(parent){
-    }
 
-    /**
-     * @returns {string}
-     */
-    get id(){
-        return this.#id
-    }
-    /**
-     * @returns {HTMLDivElement}
-     */
-    get div(){
-        return this.#div
-    }
+const navbar = new NavigationBar();
 
-    /**
-     * @param {string} id
-     */
-    activate(id){
+const classA = new ClassA()
+classA.appendTo(document.body)
 
-    }
-}
-export {ViewElement}
+const classB = new ClassB
+classB.appendTo(document.body)
+
+navbar.addViewElement('ClassA oldala', classA)
+navbar.addViewElement('ClassB oldala', classB)
+
+navbar.activate('classA')
